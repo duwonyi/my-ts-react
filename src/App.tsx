@@ -1,12 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { ReactElement, ReactNode } from 'react'
+import styled from 'styled-components'
 
-const App: React.FC = () => {
+import { ReactComponent as Logo } from './logo.svg'
+
+type AppContainerProps = {
+  className: string
+  children: ReactNode
+}
+
+const AppContainer = styled.div<AppContainerProps>`
+  .App {
+    text-align: center;
+  }
+  .App-logo {
+    height: 40vmin;
+  }
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  .App-link {
+    color: #09d3ac;
+  }
+`
+
+function App(): ReactElement {
   return (
-    <div className="App">
+    <AppContainer className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Logo className="App-logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -19,8 +47,8 @@ const App: React.FC = () => {
           Learn React
         </a>
       </header>
-    </div>
-  );
+    </AppContainer>
+  )
 }
 
-export default App;
+export default App

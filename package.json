@@ -3,23 +3,55 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.2.0",
+    "styled-components": "^4.4.1",
+    "typescript": "3.7.2"
+  },
+  "devDependencies": {
     "@types/jest": "24.0.23",
     "@types/node": "12.12.8",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.4",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0",
-    "typescript": "3.7.2"
+    "@types/styled-components": "^4.4.0",
+    "@typescript-eslint/eslint-plugin": "^2.7.0",
+    "add": "^2.0.6",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.5.0",
+    "prettier": "^1.19.1",
+    "yarn": "^1.19.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\""
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "airbnb",
+      "plugin:@typescript-eslint/recommended",
+      "prettier"
+    ],
+    "rules": {
+      "react/jsx-one-expression-per-line": 0,
+      "react/jsx-filename-extension": 0,
+      "import/no-unresolved": 0,
+      "no-console": 0,
+      "no-param-reassign": 0,
+      "@typescript-eslint/member-delimiter-style": [
+        2,
+        {
+          "multiline": {
+            "delimiter": "none",
+            "requireLast": false
+          }
+        }
+      ]
+    }
   },
   "browserslist": {
     "production": [
